@@ -46,7 +46,7 @@ namespace senai_hroads_webAPI.Repositories
         }
         public List<TipoUsuario> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.TipoUsuarios.ToList();
         }
     }
 }

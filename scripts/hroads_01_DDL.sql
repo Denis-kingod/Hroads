@@ -25,6 +25,7 @@ CREATE TABLE Classes(
 	nomeClasse VARCHAR(30) UNIQUE NOT NULL
 );
 GO
+SELECT * FROM Classes
 
 CREATE TABLE HabClasses (
 	idHabClasses TINYINT PRIMARY KEY IDENTITY (1,1),
@@ -42,5 +43,18 @@ CREATE TABLE Personagem(
 	dataAtt DATE NOT NULL,
 	dataCriada DATE NOT NULL
 );
+GO
+
+CREATE TABLE TipoUsuario( 
+	idTipoUsuario INT PRIMARY KEY IDENTITY, 
+	titulo VARCHAR(200) ); 
+GO  
+
+CREATE TABLE Usuario( 
+	idUsuario INT PRIMARY KEY IDENTITY, 
+	idTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(idTipoUsuario), 
+	nomeJogador VARCHAR(200), 
+	email VARCHAR(200), 
+	senha VARCHAR(200) ); 
 GO
 
